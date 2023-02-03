@@ -33,3 +33,21 @@ svelte-package
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## DEMO PAGE
+
+![Screenshot_20230203_183355](https://user-images.githubusercontent.com/24867893/216670234-d25daa96-748f-4afd-8bed-fc804f28f4d9.png)
+
+![Screenshot_20230203_183407](https://user-images.githubusercontent.com/24867893/216670269-e3229c5d-2505-4003-a053-f7d7470ed6ca.png)
+
+![Screenshot_20230203_183338](https://user-images.githubusercontent.com/24867893/216670456-3fa5b06b-b9fa-4b0f-a665-1aee0eae115c.png)
+
+
+![Screenshot_20230203_183322](https://user-images.githubusercontent.com/24867893/216670295-201f576c-84d6-4413-bae0-bbfcb73c451a.png)
+
+
+
+
+
+
+
