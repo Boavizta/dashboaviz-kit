@@ -1,3 +1,5 @@
+npm package : https://www.npmjs.com/package/dashboaviz-kit
+
 ## Use the library
 
 To see all the components in action and dataformats go to the [demo page](https://github.com/Boavizta/dashboaviz-kit/blob/main/src/routes/%2Bpage.svelte)
