@@ -1,3 +1,14 @@
+## Use the library
+
+To see all the components in action and dataformats go to the [demo page](https://github.com/Boavizta/dashboaviz-kit/blob/main/src/routes/%2Bpage.svelte)
+
+## Install
+
+```bash
+npm i dashboaviz-kit
+```
+
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
@@ -6,7 +17,7 @@ Once you've created a project and installed dependencies with `npm install` (or 
 npm run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm run dev --open
 ```
 
 ## Building
@@ -14,7 +25,7 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```bash
-npm run build
+svelte-package
 ```
 
 You can preview the production build with `npm run preview`.
