@@ -5,6 +5,7 @@
     export let impactsCriterias;
 
     let selected_criteria = "GWP";
+    export let name = "Impact";
 
     function change_criteria(e) {
         selected_criteria = e.detail.value;
@@ -17,7 +18,7 @@
         <Select items={impactsCriterias} clearable={false} value={selected_criteria} on:change={change_criteria}></Select>
     </div>
     <div class="impact-selector-child-1">
-        <SectionTitle title="impact"></SectionTitle>
+        <SectionTitle title="{name}"></SectionTitle>
     </div>
 </div>
 
@@ -35,5 +36,6 @@
     }
     .impact-selector-parent {
         display: flex;
+        margin-top: 2%;
     }
 </style>

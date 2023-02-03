@@ -6,7 +6,7 @@
 <main>
     <MenuBar menu_items={menu_items}/>
     <div id="content">
-        <slot />
+        <slot/>
     </div>
 </main>
 

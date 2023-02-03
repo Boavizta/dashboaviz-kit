@@ -20,7 +20,7 @@ hr{
 
 h1 {
     text-align: left;
-    margin-top: 1%;
+    margin-top: 2%;
     font-size: 1.1vw;
 }
 </style>

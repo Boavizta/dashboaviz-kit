@@ -27,7 +27,7 @@
     };
 
     onMount(async () => {
-        await import("../ext/gauge.min.js");
+        await import("../gaugejs/gauge.min.js");
         let gauge = createGauge();
         gauge.setOptions(opts);
         gauge.maxValue = max_value;
