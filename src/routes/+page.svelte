@@ -9,7 +9,7 @@
     import MultiImpactsZone from "$lib/zones/MultiImpactsZone.svelte";
     import {onMount} from "svelte";
     import BarChart from "$lib/graph/echarts/BarChart.svelte";
-    import BoaviztaLayout from "$lib/layout/BoaviztaLayout.svelte";
+    import MultiBar2Dimensions from "$lib/bars/MultiBar2Dimensions.svelte";
 
     let mutiimpactzone_barchart_data = {
         "GWP":{
@@ -126,6 +126,60 @@
         }
     }
 
+    let multiBar2Dimension = {
+        "GWP":{
+            "unit": "kg CO2e",
+            "title": "Global Warming Potential",
+            "description": "The Global Warming Potential (GWP) is a measure of the relative warming potential of a greenhouse gas compared to carbon dioxide (CO2).",
+            "data":{
+                "Usage": {
+                    "": 100,
+                },
+                "Manufacture": {
+                    "SSD": 100,
+                    "HDD": 20,
+                    "RAM": 30,
+                    "CPU": 10,
+                    "Others": 40,
+                }
+            }
+        },
+        "ADP":{
+            "unit": "kgSbeq",
+            "title": "Abiotic Depletion Potential",
+            "description": "The Abiotic Depletion Potential (ADP) is a measure of the relative depletion potential of a material compared to copper.",
+            "data": {
+                "Usage": {
+                    "": 100,
+                },
+                "Manufacture": {
+                    "SSD": 100,
+                    "HDD": 20,
+                    "RAM": 30,
+                    "CPU": 10,
+                    "Others": 40,
+                }
+            }
+        },
+        "PE":{
+            "unit": "MJ",
+            "title": "Primary Energy",
+            "description": "The Primary Energy (PE) is a measure of the energy required to produce a product.",
+            "data": {
+                "Usage": {
+                    "": 900,
+                },
+                "Manufacture": {
+                    "SSD": 1,
+                    "HDD": 20,
+                    "RAM": 30,
+                    "CPU": 10,
+                    "Others": 40,
+                }
+            }
+        }
+    }
+
     let impactsCriterias;
     onMount(() => {
         impactsCriterias = Object.keys(mutiimpactzone_timeserie_data).map((key) => {
@@ -198,6 +252,11 @@
 <SectionTitle title="Egraph"></SectionTitle>
 <div style="display: flex;">
     <TimeSerieChart description="Lorem" data={timeserie_data} events={events}/>
+</div>
+
+<SectionTitle title="MultiBar2Dimensions"></SectionTitle>
+<div style="display: flex;">
+    <MultiBar2Dimensions data="{multiBar2Dimension}" description="How are the impacts assessed ? The impacts related to manufacture are assessed using the methodology detailed by Boavizta in this article. Those related to the use phase are evaluated from the average power consumption or modeled from the estimated server load. The methodology is detailed here: doc.api.boavizta.org. To go further. This page uses the BoaviztAPI. An open-source API that uses open data and methods to assess the environmental impacts of digital equipment." title="MultiBar2Dimensions"></MultiBar2Dimensions>
 </div>
 
 <style>

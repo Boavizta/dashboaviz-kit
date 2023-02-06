@@ -43,7 +43,7 @@
         };
 
         if (data){
-            option.xAxis.data = data.slice(1).map(d =>d[0]);
+            option.xAxis.metrics = data.slice(1).map(d =>d[0]);
             for (let i = 1; i < data[0].length; i++){
                 option.series.push({
                     name: data[0][i],
