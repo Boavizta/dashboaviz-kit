@@ -1,6 +1,7 @@
 <script>
     import {afterUpdate, onMount} from "svelte";
     import Metric from "$lib/metrics/Metric.svelte";
+    import {ColorProvider} from "$lib/ColorProvider.js";
 
     export let title = "Title";
     export let value = 0;
@@ -8,7 +9,7 @@
     export let description = "null";
     export let max_value = 100;
     export let min_value = 0;
-    export let color = "#686464";
+    export let color = new ColorProvider().next();
 
     let target;
     let txt_field;

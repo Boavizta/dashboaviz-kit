@@ -10,6 +10,9 @@
     import {onMount} from "svelte";
     import BarChart from "$lib/graph/echarts/BarChart.svelte";
     import MultiBar2Dimensions from "$lib/bars/MultiBar2Dimensions.svelte";
+    import {ColorProvider} from "$lib/ColorProvider";
+
+    let color_provider = new ColorProvider()
 
     let mutiimpactzone_barchart_data = {
         "GWP":{
@@ -238,9 +241,9 @@
 
 <SectionTitle title="Gauges"></SectionTitle>
 <div style="display: flex;">
-    <Gauge value=34 description="Lorem"/>
-    <Gauge value=200 max_value="230" unit="/230" description="Lorem"/>
-    <Gauge value=1 description="Lorem"/>
+    <Gauge value=34 description="Lorem" color={color_provider.next()}/>
+    <Gauge value=200 max_value="230" unit="/230" description="Lorem" color={color_provider.next()}/>
+    <Gauge value=1 description="Lorem" color={color_provider.next()}/>
 </div>
 
 <SectionTitle title="Dygrap"></SectionTitle>
@@ -265,5 +268,4 @@
         font-weight: 600;
         margin: 0 0 0 0.5%;
     }
-
 </style>

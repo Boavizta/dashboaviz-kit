@@ -1,13 +1,13 @@
 <script>
     import EChart from "$lib/graph/echarts/EChart.svelte";
     import {afterUpdate, onMount} from "svelte";
+    import {ColorProvider} from "$lib/ColorProvider.js";
 
     export let title;
     export let description;
     export let plainArea = true;
-
-    export let data;
-
+    export let color_provider = new ColorProvider();
+    export let data = [];
     export let events;
 
     let option = {};
@@ -61,7 +61,7 @@
                 smooth: true,
                 data: [],
                 markLine: { data: event_series},
-
+                color: color_provider.next()
             })
         }
 
@@ -77,7 +77,8 @@
                         lineStyle: {
                             width: 2
                         },
-                        areaStyle: areaStyle
+                        areaStyle: areaStyle,
+                        color: color_provider.range(data[0].length)
                     });
                 }
             });
@@ -85,14 +86,17 @@
     }
 
     onMount(() => {
+        color_provider.reset();
         createGraph();
     });
 
     afterUpdate(() => {
+        color_provider.reset();
         createGraph();
     });
 
     $: if (option) {
+        color_provider.reset();
         createGraph();
     }
 </script>

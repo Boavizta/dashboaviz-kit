@@ -1,6 +1,7 @@
 <script>
     import EChart from "$lib/graph/echarts/EChart.svelte";
     import {afterUpdate, onMount} from "svelte";
+    import {ColorProvider} from "$lib/ColorProvider.js";
 
     export let title;
     export let description;
@@ -8,6 +9,8 @@
     export let data;
 
     let option = {};
+    export let color_provider = new ColorProvider();
+
 
     function createGraph(){
         option = {
@@ -50,7 +53,8 @@
                     type: 'bar',
                     data: data.slice(1).map(d => d[i]),
                     smooth: true,
-                    stack: "x"
+                    stack: "x",
+                    color: color_provider.range(data[0].length)
                 });
             }
         }

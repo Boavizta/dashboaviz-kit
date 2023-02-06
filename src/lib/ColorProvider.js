@@ -1,5 +1,5 @@
 export class ColorProvider {
-    DEFAULT_COLORS = ["rgb(24, 61, 93)", "#008A8C", "rgb(84, 182, 189)", " rgb(202, 231, 227)", " rgb(247, 210, 72)", "rgb(202, 162, 124)", "rgb(157, 181, 183)"];
+    DEFAULT_COLORS = ["rgb(24, 61, 93)", "rgb(0, 138, 140)", "rgb(84, 182, 189)", " rgb(202, 231, 227)", " rgb(247, 210, 72)", "rgb(202, 162, 124)", "rgb(157, 181, 183)"];
     constructor(c = null) {
         if (c === null){
             this.colors = this.DEFAULT_COLORS;
@@ -24,4 +24,19 @@ export class ColorProvider {
         this.index = 0;
         return ""
     }
+    getRandomColor() {
+        return this.colors[Math.floor(Math.random() * this.colors.length)];
+    }
+
+    /**
+     * @param {number} length
+     */
+    range(length) {
+        let colorpalette = [];
+        for(let i=0;i<length;i++){
+            colorpalette.push(this.next());
+        }
+        return colorpalette;
+    }
 }
+
